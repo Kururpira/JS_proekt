@@ -1,3 +1,4 @@
+
 .el {
     padding: 15px 35px;
     font-size: 21px;
@@ -6,17 +7,17 @@
     border: 2px dashed #aaa;
  }
  .container {
-    display: grid;
-    grid-template-columns: 50fr;
-    grid-template-rows: 1fr 2fr;
+    display: flex;
+    justify-content: center;
+   flex-direction: column;
  }
- #ingredients{
-    border: 1px black solid;
-    border-radius: 1%;
-    background-color: rgba(245, 226, 25, 0.496);
- }
+
  #edamam-badge{
 display: flex;
 justify-content: center;
  }
+ #AnalysisForm{
+height: 60px;
+ }
+
 
