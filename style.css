@@ -1,8 +1,8 @@
 .el {
     padding: 15px 35px;
     font-size: 21px;
-    color: #bec2c563;
-    background: lightblue;
+    color: #056ebf;
+    background: rgb(255, 255, 255);
     border: 2px dashed #aaa;
  }
  .container {
