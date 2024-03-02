@@ -8,23 +8,29 @@ let calcium = document.getElementById('calcium');
 let analysisForm = document.getElementById('AnalysisForm');
 
 function onBtnClick(){
-const API = `https://api.edamam.com/api/nutrition-data?app_id=d7be0f59&app_key=7670b7efd74aa8278e4343bfd8644a49&nutrition-type=cooking&ingr=1%20${ingridients}`
-const caloriesResult = fetch(API).then((res) => res.json()).then((data) => {calories.textContent =Math.ceil(data.totalNutrients.ENERC_KCAL.quantity)});
-const sugarResult = fetch(API).then((res) => res.json()).then((data) => {sugar.textContent = Math.ceil(data.totalNutrients.SUGAR.quantity)});
-const ironResult = fetch(API).then((res) => res.json()).then((data) => {iron.textContent = Math.ceil(data.totalNutrients.FE.quantity)});
-const vitaminCResult = fetch(API).then((res) => res.json()).then((data) => {vitaminC.textContent = Math.ceil(data.totalNutrients.VITC.quantity)});
-const calciumCResult = fetch(API).then((res) => res.json()).then((data) => {calcium.textContent = Math.ceil(data.totalNutrients.CA.quantity)});
+  try{
+//const API = 'https://api.edamam.com/api/nutrition-data?app_id=d7be0f59&app_key=7670b7efd74aa8278e4343bfd8644a49&nutrition-type=cooking&ingr=1%20onion'
+let API = `https://api.edamam.com/api/nutrition-data?app_id=d7be0f59&app_key=7670b7efd74aa8278e4343bfd8644a49&nutrition-type=cooking&ingr=1%20${ingridients}`;
 
+let caloriesResult = fetch(API).then((res) => res.json()).then((data) => calories.textContent = Math.ceil(data.totalNutrients.ENERC_KCAL.quantity));
+let sugarResult = fetch(API).then((res) => res.json()).then((data) => sugar.textContent = Math.ceil(data.totalNutrients.SUGAR.quantity));
+let ironResult = fetch(API).then((res) => res.json()).then((data) => iron.textContent = Math.ceil(data.totalNutrients.FE.quantity));
+let vitaminCResult = fetch(API).then((res) => res.json()).then((data) => vitaminC.textContent = Math.ceil(data.totalNutrients.VITC.quantity));
+let calciumCResult = fetch(API).then((res) => res.json()).then((data) => calcium.textContent = Math.ceil(data.totalNutrients.CA.quantity));
+  }
+  catch{
+    console.log('Ошибка в обработке запроса');
+  }
 }
 
 
 function onBtnClickCleaner(){
+  let API = `https://api.edamam.com/api/nutrition-data?app_id=d7be0f59&app_key=7670b7efd74aa8278e4343bfd8644a49&nutrition-type=cooking&ingr=1%20${ingridients}`;
+ 
+  let caloriesResult = fetch(API).then((res) => res.json()).then((data) => {calories.textContent = 0});
+let sugarResult = fetch(API).then((res) => res.json()).then((data) => {sugar.textContent = 0});
+let ironResult = fetch(API).then((res) => res.json()).then((data) => {iron.textContent = 0});
+let vitaminCResult = fetch(API).then((res) => res.json()).then((data) => {vitaminC.textContent = 0});
+let calciumCResult = fetch(API).then((res) => res.json()).then((data) => {calcium.textContent = 0}); 
   
-  analysisForm.reset();
-};
-/* const API = `https://api.edamam.com/api/nutrition-data?app_id=d7be0f59&app_key=7670b7efd74aa8278e4343bfd8644a49&nutrition-type=cooking&ingr=1%20${ingridients}`
-  const caloriesResult = fetch(API).then((res) => res.json()).then((data) => {calories.textContent = 0});
-const sugarResult = fetch(API).then((res) => res.json()).then((data) => {sugar.textContent = 0});
-const ironResult = fetch(API).then((res) => res.json()).then((data) => {iron.textContent = 0});
-const vitaminCResult = fetch(API).then((res) => res.json()).then((data) => {vitaminC.textContent = 0});
-const calciumCResult = fetch(API).then((res) => res.json()).then((data) => {calcium.textContent = 0}); */
+}
