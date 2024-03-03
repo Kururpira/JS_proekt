@@ -22,12 +22,12 @@ let calciumCResult = fetch(API).then((res) => res.json()).then((data) => calcium
 
 
 function onBtnClickCleaner(){
-  let API = `https://api.edamam.com/api/nutrition-data?app_id=d7be0f59&app_key=7670b7efd74aa8278e4343bfd8644a49&nutrition-type=cooking&ingr=1%20${ingridients}`;
  
-  let caloriesResult = fetch(API).then((res) => res.json()).then((data) => {calories.textContent = 0});
-let sugarResult = fetch(API).then((res) => res.json()).then((data) => {sugar.textContent = 0});
-let ironResult = fetch(API).then((res) => res.json()).then((data) => {iron.textContent = 0});
-let vitaminCResult = fetch(API).then((res) => res.json()).then((data) => {vitaminC.textContent = 0});
-let calciumCResult = fetch(API).then((res) => res.json()).then((data) => {calcium.textContent = 0}); 
-  
+  calories.textContent = 0;
+sugar.textContent = 0;
+iron.textContent = 0;
+vitaminC.textContent = 0;
+calcium.textContent = 0;
+ingridients.value = '';
+
 }
